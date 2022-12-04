@@ -1,13 +1,17 @@
 
 import './App.css';
-import LoginPage from "./components/Login/login";
-import RegisterPage from './components/Register/Register';
+import CreateAssessment from './components/Assement/CreateAssement';
+import Dashboard from './components/Dashboard/Dashboard';
+import UserProfile from './components/Profile/Profile';
+import Index from './components/Routing/Routes';
 
 function App() {
   return (
     <div className="App">
-      {/* <LoginPage /> */}
-      <RegisterPage />
+    <UserProfile />
+    {/* <CreateAssessment /> */}
+    {/* <Dashboard />
+    <Index /> */}
     </div>
   );
 }
