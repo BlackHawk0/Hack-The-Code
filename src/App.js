@@ -8,10 +8,10 @@ import Index from './components/Routing/Routes';
 function App() {
   return (
     <div className="App">
-    <UserProfile />
-    {/* <CreateAssessment /> */}
-    {/* <Dashboard />
-    <Index /> */}
+    {/* <UserProfile /> */}
+    <CreateAssessment /> 
+    {/* <Dashboard /> */}
+    {/* <Index /> */}
     </div>
   );
 }
