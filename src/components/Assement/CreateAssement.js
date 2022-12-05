@@ -1,86 +1,134 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const CreateAssessment = () => {
-  const [assessment, setAssessment] = useState({
-    name: "",
-    description: "",
-    timeLimit: 0,
-    questions: [],
-  });
+  const [title, setTitle] = useState("");
+  const [timeLimit, setTimeLimit] = useState(0);
+  const [questions, setQuestions] = useState([]);
+  const [error, setError] = useState("");
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handleTimeLimitChange = (event) => {
+    setTimeLimit(event.target.value);
+  };
+
+  const handleQuestionChange = (event, index) => {
+    const newQuestions = [...questions];
+    newQuestions[index] = event.target.value;
+    setQuestions(newQuestions);
+  };
+
+  const handleAddQuestion = () => {
+    setQuestions([...questions, { type: "multiple_choice", choices: [""] }]);
+  };
+
+  const handleSubmit = () => {
+    if (!title || !timeLimit || questions.length === 0) {
+      setError("Please enter a title, time limit, and at least one question.");
+      return;
+    }
+
+    axios
+      .post("/api/assessments", {
+        title,
+        timeLimit,
+        questions,
+      })
+      .then(() => {
+        setTitle("");
+        setTimeLimit(0);
+        setQuestions([]);
+        setError("");
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+      console.log(title);
+  };
 
   return (
-    <div className="bg-gray-200 h-screen flex flex-col justify-center items-center">
-      <h1 className="text-3xl font-bold">Create Assessment</h1>
-      <form className="w-full max-w-sm">
-        <div className="md:flex md:items-center mb-6">
-          <div className="md:w-1/3">
-            <label
-              className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-full-name"
-            >
-              Name
-            </label>
-          </div>
-          <div className="md:w-2/3">
+    <div className="w-full max-w-md mt-4 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+      <h2 className="font-semibold text-lg text-center py-2 text-gray-700 bg-gray-200">
+        Create Assessment
+      </h2>
+      <div className="px-4 py-2 flex-1">
+        <div className="mb-4">
+          <label className="block font-bold mb-2 text-gray-700">
+            Title:
             <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-              id="inline-full-name"
+              className="form-input mt-1 block w-full"
               type="text"
-              placeholder="Jane Doe"
+              value={title}
+              onChange={handleTitleChange}
             />
-          </div>
+          </label>
         </div>
-        <div className="md:flex md:items-center mb-6">
-          <div className="md:w-1/3">
-            <label
-              className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-username"
-            >
-              Description
-            </label>
-          </div>
-          <div className="md:w-2/3">
+        <div className="mb-4">
+          <label className="block font-bold mb-2 text-gray-700">
+            Time Limit (minutes):
             <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-              id="inline-username"
-              type="text"
-              placeholder="JaneDoe45"
+              className="form-input mt-1 block w-full"
+              type="number"
+              value={timeLimit}
+              onChange={handleTimeLimitChange}
             />
-          </div>
+          </label>
         </div>
-        <div className="md:flex md:items-center mb-6">
-          <div className="md:w-1/3">
-            <label
-              className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-email"
-            >
-              Time Limit
-            </label>
-          </div>
-          <div className="md:w-2/3">
-            <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-              id="inline-email"
-              type="text"
-              placeholder="jane@example.com"
-            />
-          </div>
-        </div>
-        <div className="md:flex md:items-center">
-          <div className="md:w-1/3"></div>
-          <div className="md:w-2/3">
+        <div className="mb-4">
+          <label className="block font-bold mb-2 text-gray-700">
+            Questions:
+            <div className="mt-1">
+              {questions.length > 0 &&
+                questions.map((question, index) => (
+                  <div key={index} className="mt-2">
+                    <label className="block font-bold mb-2 text-gray-700">
+                      Question {index + 1}:
+                      <input
+                        className="form-input mt-1 block w-full"
+                        type="text"
+                        value={question.text}
+                        onChange={(event) => handleQuestionChange(event, index)}
+                      />
+                    </label>
+                    <label className="block font-bold mb-2 text-gray-700">
+                      Answer:
+                      <input
+                        className="form-input mt-1 block w-full"
+                        type="text"
+                        value={question.answer}
+                        onChange={(event) => handleQuestionChange(event, index)}
+                      />
+                    </label>
+                  </div>
+                ))}
+            </div>
             <button
-              className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              className="mt-2 py-1 px-2 rounded bg-green-500 text-white"
               type="button"
+              onClick={handleAddQuestion}
             >
               Add Question
             </button>
-          </div>
+          </label>
         </div>
-      </form>
+      </div>
+      <div className="px-4 py-2">
+        <div className="mb-4 text-red-500 text-sm">{error}</div>
+        <button
+          className="w-full py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded focus:outline-none focus:shadow-outline"
+          type="button"
+          onClick={handleSubmit}
+        >
+          Create Assessment
+        </button>
+      </div>
     </div>
   );
 };
 
+export default CreateAssessment;
 
-export default CreateAssessment
+
