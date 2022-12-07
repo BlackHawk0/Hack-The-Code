@@ -18,28 +18,25 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-    {/* <UserProfile /> */}
-    <CreateAssessment /> 
-    {/* <Dashboard /> */}
-    {/* <Index /> */}
+      {/* <UserProfile /> */}
+
+      {/* <Dashboard /> */}
+      {/* <Index /> */}
       {/* <WhiteBoard/> */}
       {/* <ReviewCard />
       <ReviewForm /> */}
       {/* <Reviews /> */}
 
-   
-      {/* <NavBar /> */}
-      {/* <Routes>
+      <NavBar />
+      <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<LoginPage />} />
-        <Route exact path="/registerPage" element={<RegisterPage />} />
+        <Route exact path="/register" element={<RegisterPage />} />
         <Route exact path="/studentList" element={<StudentList />} />
         <Route exact path="/feedBack" element={<FeedBack />} />
-      </Routes> */}
+        <Route exact path="/createAssessment" element={<CreateAssessment />} />
+      </Routes>
       {/* <Footer /> */}
-
-
-
     </div>
   );
 }
