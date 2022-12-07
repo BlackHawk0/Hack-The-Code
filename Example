@@ -1,0 +1,10 @@
+Login/authentication components for allowing users to log in to the platform.
+A dashboard component for displaying relevant information to the logged-in user (e.g. upcoming assessments, notifications, statistics).
+An assessment creation and management component for T.M. users to create, review, and publish assessments.
+An invitation management component for T.M. users to send invitations to students.
+A student list component for T.M. users to view a sorted list of students who took an assessment, along with their scores and answers.
+A feedback management component for T.M. users to leave feedback on students' answers to individual questions.
+An assessment taking component for students to view, accept, and take assessments.
+A whiteboard component for students to write BDD, pseudocode, and code during an assessment.
+A timer component for displaying the remaining time during an assessment.
+Optional: Additional components for features such as notifications, charts, and form handling.
