@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import { set } from "react-hook-form";
 function StudentList({ onSearching }) {
-
   const students = [
     {
       name: "Jane Doe",
@@ -11,9 +10,9 @@ function StudentList({ onSearching }) {
     },
 
     {
-      name: "Jane Doe",
-      email: "jane@gmail.com",
-      score: "10",
+      name: "Remy Hassan",
+      email: "remy@gmail.com",
+      score: "30",
       answer: "Ruby gem",
     },
   ];
