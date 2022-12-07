@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = ({ username, password }) => {
   // Authenticate the user using the provided username and password
@@ -8,7 +9,6 @@ const LoginPage = ({ username, password }) => {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      {/* <div className="w-full max-w-xs"> */}
       <div className="flex items-center justify-center h-full">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-6">
           <div className="mb-4">
@@ -55,6 +55,13 @@ const LoginPage = ({ username, password }) => {
             >
               Forgot Password?
             </a>
+          </div>
+          <div className="mt-3">
+            <button>
+              <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                <Link to="/register">Don't have an account?. Register</Link>
+              </a>
+            </button>
           </div>
         </form>
         <p className="text-center text-gray-500 text-xs absolute bottom-10">
