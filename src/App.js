@@ -22,22 +22,22 @@ function App() {
     <CreateAssessment /> 
     {/* <Dashboard /> */}
     {/* <Index /> */}
-      <WhiteBoard/>
+      {/* <WhiteBoard/> */}
       {/* <ReviewCard />
       <ReviewForm /> */}
-      <Reviews />
+      {/* <Reviews /> */}
 
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<LoginPage />} />
-          <Route exact path="/registerPage" element={<RegisterPage />} />
-          <Route exact path="/studentList" element={<StudentList />} />
-          <Route exact path="/feedBack" element={<FeedBack />} />
-        </Routes>
-        {/* <Footer /> */}
-      </BrowserRouter>
+   
+      {/* <NavBar /> */}
+      {/* <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/login" element={<LoginPage />} />
+        <Route exact path="/registerPage" element={<RegisterPage />} />
+        <Route exact path="/studentList" element={<StudentList />} />
+        <Route exact path="/feedBack" element={<FeedBack />} />
+      </Routes> */}
+      {/* <Footer /> */}
+
 
 
     </div>
