@@ -23,7 +23,7 @@ function Home() {
           <div className="flex space-x-20 ">
             <NavLink
               className="bg-gray-500 py-3 px-6 text-lg rounded-md w-48"
-              to="/registerPage"
+              to="/register"
               exact
             >
               Register
