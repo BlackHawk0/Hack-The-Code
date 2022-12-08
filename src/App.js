@@ -1,8 +1,8 @@
 import "./App.css";
 import LoginPage from "./components/Login/login";
 
+
 // import RegisterPage from './components/Register/Register';
-// import WhiteBoard from './components/Whiteboard'
 import WhiteBoard from './components/Whiteboard'
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
