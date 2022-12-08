@@ -1,9 +1,8 @@
 import "./App.css";
 import LoginPage from "./components/Login/login";
 
-import RegisterPage from './components/Register/Register';
-import WhiteBoard from './components/Whiteboard'
 
+// import RegisterPage from './components/Register/Register';
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
 import Reviews from './components/Reviews/reviews';
@@ -12,8 +11,9 @@ import FeedBack from "./components/FeedBack/FeedBack";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import CreateAssessment from "./components/Assement/CreateAssement";
-import { Route, Routes } from "react-router-dom";
 import InvitationForm from "./components/Assement/InvitationForm";
+import { Route, Routes } from "react-router-dom";
+import Timer from "./components/Timer/timer";
 
 
 function App() {
@@ -23,7 +23,9 @@ function App() {
 
       {/* <Dashboard /> */}
       {/* <Index /> */}
-      {/* <WhiteBoard/> */}
+      <Timer />
+      {/* <LoginPage /> */}
+      <RegisterPage />
       {/* <ReviewCard />
       <ReviewForm /> */}
       {/* <Reviews /> */}
