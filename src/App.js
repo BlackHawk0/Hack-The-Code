@@ -12,7 +12,8 @@ import FeedBack from "./components/FeedBack/FeedBack";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import CreateAssessment from "./components/Assement/CreateAssement";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import InvitationForm from "./components/Assement/InvitationForm";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       {/* <ReviewCard />
       <ReviewForm /> */}
       {/* <Reviews /> */}
+     
 
       <NavBar />
       <Routes>
@@ -35,6 +37,7 @@ function App() {
         <Route exact path="/studentList" element={<StudentList />} />
         <Route exact path="/feedBack" element={<FeedBack />} />
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
+        <Route exact path="/invitation" element={ <InvitationForm />} />
       </Routes>
       {/* <Footer /> */}
     </div>
