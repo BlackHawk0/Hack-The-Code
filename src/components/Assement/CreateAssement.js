@@ -79,14 +79,25 @@ const CreateAssessment = () => {
       setError("Please enter a title, time limit, and at least one question.");
       return;
     }
-
-    axios
-      .post("/api/assessments", {
-        title,
-        timeLimit,
-        questions,
+    const data = {
+      title,
+      timeLimit,
+      questions,
+    };
+    fetch("http://127.0.0.1:3000/assessments", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to create assessment");
+        }
+        return response.json();
       })
-      .then(() => {
+      .then((data) => {
         setTitle("");
         setTimeLimit(0);
         setQuestions([]);
@@ -95,8 +106,9 @@ const CreateAssessment = () => {
       .catch((err) => {
         setError(err.message);
       });
-    console.log(questions);
   };
+
+
 
   return (
     <div className="w-full max-w-4xl mt-16 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
