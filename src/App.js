@@ -1,13 +1,9 @@
 import "./App.css";
 import LoginPage from "./components/Login/login";
 
-<<<<<<< HEAD
-// import RegisterPage from './components/Register/Register';
-=======
-import RegisterPage from './components/Register/Register';
-import WhiteBoard from './components/Whiteboard'
 
->>>>>>> 84919a9326e4fea23a8677ad8b784f835fe9dc66
+// import RegisterPage from './components/Register/Register';
+import WhiteBoard from './components/Whiteboard'
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
 import Reviews from './components/Reviews/reviews';
@@ -18,11 +14,13 @@ import FeedBack from "./components/FeedBack/FeedBack";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Timer from "./components/Timer/timer";
 
 
 function App() {
   return (
     <div className="App">
+      <Timer />
       {/* <LoginPage /> */}
       <RegisterPage />
       <WhiteBoard/>
