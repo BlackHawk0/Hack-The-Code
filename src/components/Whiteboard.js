@@ -25,3 +25,5 @@ export default function Whiteboard() {
     </div>
   );
 }
+
+export default Whiteboard;
