@@ -7,17 +7,17 @@ function Dashboard() {
   const [studentsCount, setStudentCount] = useState(0)
   const [invites, setInvites] = useState(0)
   useEffect(() => {
-    fetch("http://localhost:3000/allassessments")
+    fetch("https://arcane-lake-46873.herokuapp.com/allassessments")
       .then((res) => res.json())
       .then((data) => setAssessmentCount(data))
       .catch((err) => console.log(err));
 
-    fetch("http://localhost:3000/allstudents")
-    .then((res) => res.json())
-    .then((data) => setStudentCount(data))
-    .catch((err) => console.log(err))
+    fetch("https://arcane-lake-46873.herokuapp.com/allstudents")
+      .then((res) => res.json())
+      .then((data) => setStudentCount(data))
+      .catch((err) => console.log(err));
 
-    fetch("http://localhost:3000/invites")
+    fetch("https://arcane-lake-46873.herokuapp.com/invites")
       .then((res) => res.json())
       .then((data) => setInvites(data))
       .catch((err) => console.log(err));

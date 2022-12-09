@@ -40,7 +40,7 @@ const RegisterPage = () => {
     };
     console.log(newUser);
     // Send the new user object to the backend API for registration
-    fetch("http://127.0.0.1:3000/register", {
+    fetch("https://arcane-lake-46873.herokuapp.com/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,10 +53,10 @@ const RegisterPage = () => {
           toast.error(data.message, {
             position: "top-center",
           });
-        }else{
+        } else {
           toast.success("Signed up successfully", {
             position: "top-center",
-          })
+          });
         }
 
         // Set the registered flag to true

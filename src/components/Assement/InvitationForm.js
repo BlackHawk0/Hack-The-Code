@@ -14,7 +14,7 @@ const InvitationForm = () => {
     // Use the useEffect hook to retrieve the list of assessments and students when the component is mounted
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:3000/assessments")
+      .get("https://arcane-lake-46873.herokuapp.com/assessments")
       .then((response) => {
         // Extract the title property from each assessment to use as the display value in the dropdown menu
         const assessments = response.data.map((assessment) => ({
@@ -32,7 +32,7 @@ const InvitationForm = () => {
       });
 
     axios
-      .get("http://127.0.0.1:3000/users")
+      .get("https://arcane-lake-46873.herokuapp.com/users")
       .then((response) => {
         // Filter out the users who are not students
         const students = response.data.filter((user) => user.student === true);
@@ -66,7 +66,7 @@ const InvitationForm = () => {
         students: formState.students,
       }
     axios
-      .post("http://127.0.0.1:3000/invitations", {
+      .post("https://arcane-lake-46873.herokuapp.com/invitations", {
         assessment: formState.assessment,
         students: formState.students,
       })
@@ -76,7 +76,6 @@ const InvitationForm = () => {
           position: "top-center",
         });
         window.location.href = "/dashboard";
-        
       })
       .catch((error) => {
         // If there was an error, show an error message
