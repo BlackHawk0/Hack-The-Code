@@ -23,7 +23,7 @@ const LoginPage = () => {
           setUser(user)
           if(user.mentor === true){
             
-            window.location.href = "/mentor";
+            window.location.href = "/dashboard";
           }else{
            
             window.location.href = "/student";
