@@ -13,12 +13,11 @@ import CreateAssessment from "./components/Assement/CreateAssement";
 import InvitationForm from "./components/Assement/InvitationForm";
 import { Route, Routes } from "react-router-dom";
 import Timer from "./components/Timer/timer";
-import UserProfile from "./components/Profile/Profile";
 
 function App() {
   return (
     <div className="App">
-      <UserProfile />
+      {/* <UserProfile /> */}
 
       {/* <Dashboard /> */}
       {/* <Index /> */}
