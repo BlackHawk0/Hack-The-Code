@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // Import the axios library for making HTTP requests
+import { Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const InvitationForm = () => {
   // Use the useState hook to manage the state of the form
@@ -69,11 +72,18 @@ const InvitationForm = () => {
       })
       .then((response) => {
         // If the invitations were created successfully, show a success message
-        alert("Invitations created successfully!");
+        toast.success("Invitation sent  successfully", {
+          position: "top-center",
+        });
+        window.location.href = "/dashboard";
+        
       })
       .catch((error) => {
-        // If there was an error, log it
-        console.error(error);
+        // If there was an error, show an error message
+        toast.error("Failed to send invitation", {
+          position: "top-center",
+        });
+        <Navigate to="/dashboard" />;
       });
       console.log(data);
   };
@@ -143,6 +153,8 @@ const InvitationForm = () => {
           Send invitations
         </button>
       </div>
+      <ToastContainer />
+
     </form>
   );
 };
