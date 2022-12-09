@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CodeMirror from 'react-codemirror';
 
-function Whiteboard() {
+export default function Whiteboard() {
   const [code, setCode] = useState('');
 
   function handleChange(newCode) {

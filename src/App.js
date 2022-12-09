@@ -2,32 +2,32 @@ import "./App.css";
 import LoginPage from "./components/Login/login";
 
 import RegisterPage from './components/Register/Register';
-import WhiteBoard from './components/Whiteboard'
-
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
-import Reviews from './components/Reviews/reviews';
+import Reviews from "./components/Reviews/reviews";
 import StudentList from "./components/StudentList/StudentList";
 import FeedBack from "./components/FeedBack/FeedBack";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import CreateAssessment from "./components/Assement/CreateAssement";
-import { Route, Routes } from "react-router-dom";
 import InvitationForm from "./components/Assement/InvitationForm";
-
+import { Route, Routes } from "react-router-dom";
+import Timer from "./components/Timer/timer";
+import UserProfile from "./components/Profile/Profile";
 
 function App() {
   return (
     <div className="App">
-      {/* <UserProfile /> */}
+      <UserProfile />
 
       {/* <Dashboard /> */}
       {/* <Index /> */}
-      {/* <WhiteBoard/> */}
+      <Timer />
+      {/* <LoginPage /> */}
+      <RegisterPage />
       {/* <ReviewCard />
       <ReviewForm /> */}
       {/* <Reviews /> */}
-     
 
       <NavBar />
       <Routes>
@@ -37,7 +37,7 @@ function App() {
         <Route exact path="/studentList" element={<StudentList />} />
         <Route exact path="/feedBack" element={<FeedBack />} />
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
-        <Route exact path="/invitation" element={ <InvitationForm />} />
+        <Route exact path="/invitation" element={<InvitationForm />} />
       </Routes>
       {/* <Footer /> */}
     </div>
