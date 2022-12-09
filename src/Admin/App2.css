@@ -39,7 +39,7 @@ body {
   padding: 0;
 }
 .sidebar-list .row {
-  height: 70px;
+  height: 60px;
   text-decoration: none;
   display: flex;
   font-size: 1.2rem;

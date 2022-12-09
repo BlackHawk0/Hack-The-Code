@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // Import the axios library for making HTTP requests
+import { Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const InvitationForm = () => {
   // Use the useState hook to manage the state of the form
@@ -11,7 +14,7 @@ const InvitationForm = () => {
     // Use the useEffect hook to retrieve the list of assessments and students when the component is mounted
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:3000/assessments")
+      .get("https://arcane-lake-46873.herokuapp.com/assessments")
       .then((response) => {
         // Extract the title property from each assessment to use as the display value in the dropdown menu
         const assessments = response.data.map((assessment) => ({
@@ -29,7 +32,7 @@ const InvitationForm = () => {
       });
 
     axios
-      .get("http://127.0.0.1:3000/users")
+      .get("https://arcane-lake-46873.herokuapp.com/users")
       .then((response) => {
         // Filter out the users who are not students
         const students = response.data.filter((user) => user.student === true);
@@ -63,17 +66,23 @@ const InvitationForm = () => {
         students: formState.students,
       }
     axios
-      .post("http://127.0.0.1:3000/invitations", {
+      .post("https://arcane-lake-46873.herokuapp.com/invitations", {
         assessment: formState.assessment,
         students: formState.students,
       })
       .then((response) => {
         // If the invitations were created successfully, show a success message
-        alert("Invitations created successfully!");
+        toast.success("Invitation sent  successfully", {
+          position: "top-center",
+        });
+        window.location.href = "/dashboard";
       })
       .catch((error) => {
-        // If there was an error, log it
-        console.error(error);
+        // If there was an error, show an error message
+        toast.error("Failed to send invitation", {
+          position: "top-center",
+        });
+        <Navigate to="/dashboard" />;
       });
       console.log(data);
   };
@@ -143,6 +152,8 @@ const InvitationForm = () => {
           Send invitations
         </button>
       </div>
+      <ToastContainer />
+
     </form>
   );
 };

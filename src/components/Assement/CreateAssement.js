@@ -84,7 +84,7 @@ const CreateAssessment = () => {
       timeLimit,
       questions,
     };
-    fetch("http://127.0.0.1:3000/assessments", {
+    fetch("https://arcane-lake-46873.herokuapp.com/assessments", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

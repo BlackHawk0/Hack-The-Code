@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import LoginPage from "./components/Login/login";
 import MainPage from "./Admin/MainPage";
@@ -20,6 +21,17 @@ import Timer from "./components/Timer/timer";
 import StudentMainPage from "./Student/StudentMainPage";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       {/* <UserProfile /> */}

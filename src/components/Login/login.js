@@ -9,7 +9,7 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     // TODO: Implement authentication logic
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("https://arcane-lake-46873.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,18 +17,14 @@ const LoginPage = () => {
       body: JSON.stringify({ username, password }),
     }).then((data) => {
       if (data.ok) {
-        data.json()
-        .then((user) => {
-         
-          setUser(user)
-          if(user.mentor === true){
-            
-            window.location.href = "/mentor";
-          }else{
-           
+        data.json().then((user) => {
+          setUser(user);
+          if (user.mentor === true) {
+            window.location.href = "/dashboard";
+          } else {
             window.location.href = "/student";
           }
-        })
+        });
       }
     });
     console.log(user);
