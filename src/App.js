@@ -56,8 +56,6 @@ function App() {
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
         <Route exact path="/invitation" element={<InvitationForm />} />
       </Routes>
-      <MainPage />
-      <StudentMainPage />
     </div>
   );
 }
