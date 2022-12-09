@@ -11,11 +11,11 @@ import MainPage from "./Admin/MainPage";
 // import Reviews from "./components/Reviews/reviews";
 
 import RegisterPage from "./components/Register/Register";
-// import StudentList from "./components/StudentList/StudentList";
+import StudentList from "./components/StudentList/StudentList";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
-// import CreateAssessment from "./components/Assement/CreateAssement";
-// import InvitationForm from "./components/Assement/InvitationForm";
+import CreateAssessment from "./components/Assement/CreateAssement";
+import InvitationForm from "./components/Assement/InvitationForm";
 import { Route, Routes } from "react-router-dom";
 import Timer from "./components/Timer/timer";
 import StudentMainPage from "./Student/StudentMainPage";
@@ -38,13 +38,23 @@ function App() {
 
       {/* <Dashboard /> */}
       {/* <Index /> */}
-      <Timer />
+      {/* <Timer /> */}
+      {/* <LoginPage /> */}
+      {/* <RegisterPage /> */}
+      {/* <ReviewCard />
+      <ReviewForm /> */}
+      {/* <Reviews /> */}
 
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<LoginPage />} />
-        <Route exact path="/registerPage" element={<RegisterPage />} />
+        <Route exact path="/register" element={<RegisterPage />} />
+        <Route exact path="/dashboard" element={<MainPage />} />
+        <Route exact path="/student" element={<StudentMainPage />} />
+        <Route exact path="/studentList" element={<StudentList />} />
+        <Route exact path="/createAssessment" element={<CreateAssessment />} />
+        <Route exact path="/invitation" element={<InvitationForm />} />
       </Routes>
       <MainPage />
       <StudentMainPage />

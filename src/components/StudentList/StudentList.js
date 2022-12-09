@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { set } from "react-hook-form";
 function StudentList({ onSearching }) {
-  const students = [
-    {
-      name: "Jane Doe",
-      email: "jane@gmail.com",
-      score: "10",
-      answer: "Ruby gem",
-    },
+  const [students, setStudents] = useState([]);
+  // const students = [
+  //   {
+  //     name: "Jane Doe",
+  //     email: "jane@gmail.com",
+  //     score: "10",
+  //     answer: "Ruby gem",
+  //   },
 
-    {
-      name: "Remy Hassan",
-      email: "remy@gmail.com",
-      score: "30",
-      answer: "Ruby gem",
-    },
-  ];
+  //   {
+  //     name: "Remy Hassan",
+  //     email: "remy@gmail.com",
+  //     score: "30",
+  //     answer: "Ruby gem",
+  //   },
+  // ];
 
-  // useEffect(() => {
-  //   fetch("https://bus-booking-web-api.herokuapp.com/bookings")
-  //     .then((res) => res.json())
-  //     .then((bookings) => setBookings(bookings));
-  // }, []);
+  useEffect(() => {
+    fetch("https://arcane-lake-46873.herokuapp.com/students")
+      .then((res) => res.json())
+      .then((students) => setStudents(students));
+  }, []);
 
   const [search, setSearch] = useState("");
 
@@ -100,7 +101,7 @@ function StudentList({ onSearching }) {
                         1
                       </td>
                       <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        {student.name}
+                        {student.username}
                       </td>
                       <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                         {student.email}
