@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import CodeMirror from 'react-codemirror';
+import React, { useState } from "react";
+import CodeMirror from "react-codemirror";
 
-export default function Whiteboard() {
-  const [code, setCode] = useState('');
+function Whiteboard() {
+  const [code, setCode] = useState("");
 
   function handleChange(newCode) {
     setCode(newCode);
@@ -16,14 +16,13 @@ export default function Whiteboard() {
         value={code}
         onChange={handleChange}
         options={{
-          mode: 'javascript',
+          mode: "javascript",
           lineNumbers: true,
-          theme: 'material'
+          theme: "material",
         }}
       />
       <button onClick={() => alert(code)}>Submit Code</button>
     </div>
   );
 }
-
 export default Whiteboard;
