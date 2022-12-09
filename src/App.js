@@ -1,48 +1,30 @@
 import "./App.css";
 import LoginPage from "./components/Login/login";
 
-<<<<<<< HEAD
-// import RegisterPage from './components/Register/Register';
-=======
-import RegisterPage from './components/Register/Register';
-import WhiteBoard from './components/Whiteboard'
-
->>>>>>> 84919a9326e4fea23a8677ad8b784f835fe9dc66
-// import { ReviewCard } from './components/Reviews/ReviewCard';
-// import { ReviewForm } from './components/Reviews/ReviewForm';
-import Reviews from './components/Reviews/reviews';
+import MainPage from "./Admin/MainPage";
+import Reviews from "./components/Reviews/reviews";
 
 import RegisterPage from "./components/Register/Register";
 import StudentList from "./components/StudentList/StudentList";
-import FeedBack from "./components/FeedBack/FeedBack";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-
 function App() {
   return (
     <div className="App">
-      {/* <LoginPage /> */}
-      <RegisterPage />
-      <WhiteBoard/>
-      {/* <ReviewCard />
-      <ReviewForm /> */}
-      <Reviews />
-
       <BrowserRouter>
         <NavBar />
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/registerPage" element={<RegisterPage />} />
           <Route exact path="/studentList" element={<StudentList />} />
-          <Route exact path="/feedBack" element={<FeedBack />} />
         </Routes>
+        <MainPage />
         {/* <Footer /> */}
       </BrowserRouter>
-
-
     </div>
   );
 }
