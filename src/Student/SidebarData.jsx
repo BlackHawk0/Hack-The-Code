@@ -23,19 +23,19 @@ export const SidebarData=[
         path: "/createassessment",
         icon: <FcIcons.FcDepartment />,
       },
-      {
-        title: "StudentList",
-        path: "/studentlist",
-        icon: <FaIcons.FaUsers />,
-      },
+      // {
+      //   title: "StudentList",
+      //   path: "/studentlist",
+      //   icon: <FaIcons.FaUsers />,
+      // },
       {
         title: "Invitation",
-        path: "/InvitationForm",
+        path: "/studentinvitationform",
         icon: <MdIcons.MdInsertInvitation />,
       },
       {
         title: "Reviews",
-        path: "/reviews",
+        path: "/studentReviews",
         icon: <MdIcons.MdOutlineReviews />,
       },
       // {

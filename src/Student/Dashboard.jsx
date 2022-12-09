@@ -16,7 +16,7 @@ function Dashboard() {
                 <p className="card-text">Assessment</p>
               </div>
               <a
-                href="createassessment"
+                href="setassessment"
                 className="small-box-footer"
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -26,24 +26,6 @@ function Dashboard() {
             </div>
           </div>
           <div className="col">
-            <div className="card h-100" style={{ backgroundColor: "grey" }}>
-              {/* <img src="..." className="card-img-top" alt="..." /> */}
-              <div className="card-body">
-                <h5 className="card-title">0</h5>
-                <p className="card-text">Total Number Of Students</p>
-              </div>
-              <a
-                href="studentlist"
-                className="small-box-footer"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                More
-                <i className="bi bi-arrow-right-circle-fill" />
-              </a>
-            </div>
-          </div>
-
-          <div className="col">
             <div className="card h-100 " style={{ backgroundColor: "blue" }}>
               {/* <img src="..." className="card-img-top" alt="..." /> */}
               <div className="card-body">
@@ -51,7 +33,7 @@ function Dashboard() {
                 <p className="card-text">InvitationForm</p>
               </div>
               <a
-                href="invitationform"
+                href="studentinvitationform"
                 className="small-box-footer"
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -68,7 +50,7 @@ function Dashboard() {
                 <p className="card-text">Reviews</p>
               </div>
               <a
-                href="reviews"
+                href="studentReviews"
                 className="small-box-footer"
                 style={{ textDecoration: "none", color: "white" }}
               >
