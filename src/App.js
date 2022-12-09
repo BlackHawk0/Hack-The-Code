@@ -15,6 +15,8 @@ import InvitationForm from "./components/Assement/InvitationForm";
 import { Route, Routes } from "react-router-dom";
 import Timer from "./components/Timer/timer";
 import MainPage from "./Admin/MainPage";
+import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -53,6 +55,7 @@ function App() {
         <Route exact path="/invitation" element={<InvitationForm />} />
       </Routes>
       {/* <Footer /> */}
+
     </div>
   );
 }
