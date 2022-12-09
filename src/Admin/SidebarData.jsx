@@ -30,7 +30,7 @@ export const SidebarData = [
   },
   {
     title: "Invitation",
-    path: "/invitation",
+    path: "/mainPage/invitation",
     icon: <MdIcons.MdInsertInvitation />,
   },
   {

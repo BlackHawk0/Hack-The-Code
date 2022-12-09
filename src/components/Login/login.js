@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [user, setUser] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
   // Authenticate the user using the provided username and password
   const handleSubmit = (e) => {
     // TODO: Implement authentication logic

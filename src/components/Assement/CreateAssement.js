@@ -108,8 +108,6 @@ const CreateAssessment = () => {
       });
   };
 
-
-
   return (
     <div className="w-full max-w-4xl mt-16 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
       <h2 className="font-bold text-3xl text-center py-6 text-gray-700 bg-gray-200">

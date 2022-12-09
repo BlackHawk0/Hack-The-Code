@@ -1,4 +1,5 @@
 import React from "react";
+import Reviews from "../Reviews/reviews";
 
 function FeedBack() {
   const students = [
@@ -89,6 +90,7 @@ function FeedBack() {
             </table>
           </div>
         </div>
+        <Reviews />
       </div>
     </div>
   );
