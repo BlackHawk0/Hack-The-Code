@@ -4,7 +4,6 @@ import NavPage from './NavPage';
 import Sidebar from './Sidebar';
 import './App2.css'
 function MainPage() {
-  
   return (
     <>
       {/* navbar section */}

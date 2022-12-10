@@ -4,6 +4,9 @@ import Dashboard from "./Dashboard";
 import StudentList from "../components/StudentList/StudentList";
 import Reviews from "../components/Reviews/reviews";
 
+import MainPage from "./MainPage"
+// import Admin from "./Admin";
+
 function NavPage() {
     return (
 
