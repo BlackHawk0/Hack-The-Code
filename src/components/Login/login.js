@@ -14,7 +14,7 @@ const LoginPage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password })
     }).then((data) => {
       if (data.ok) {
         data.json().then((user) => {
