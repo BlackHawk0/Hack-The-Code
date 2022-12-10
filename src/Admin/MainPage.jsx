@@ -3,7 +3,11 @@ import Navbar from './Navbar';
 import NavPage from './NavPage';
 import Sidebar from './Sidebar';
 import './App2.css'
-function MainPage() {
+function MainPage({user}) {
+  if (user){
+    return <h1>Welcome, {user.username}!</h1>;
+  }
+  
   return (
     <>
       {/* navbar section */}

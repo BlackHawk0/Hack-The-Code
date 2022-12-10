@@ -9,7 +9,7 @@ import * as AiIcons from "react-icons/ai";
 export const SidebarData = [
   {
     title: "Home",
-    path: "../home",
+    path: "/",
     icon: <FaIcons.FaHome />,
   },
   {
@@ -20,7 +20,7 @@ export const SidebarData = [
 
   {
     title: "Assessment",
-    path: "/assesment",
+    path: "/createAssessment",
     icon: <FcIcons.FcDepartment />,
   },
   {
@@ -45,7 +45,7 @@ export const SidebarData = [
   // },
   {
     title: "Logout",
-    path: "../components/Home/home",
+    path: "/",
     icon: <MdIcons.MdLogout />,
   },
 ];
