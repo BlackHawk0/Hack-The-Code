@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -24,6 +26,10 @@ const LoginPage = () => {
           } else {
             window.location.href = "/student";
           }
+        });
+      }else {
+        toast.error("Incorrect password or username", {
+          position: "top-center",
         });
       }
     });
@@ -87,6 +93,7 @@ const LoginPage = () => {
           &copy;2022 Hack The Code. All rights reserved.
         </p>
       </div>
+      <ToastContainer />
     </div>
   );
 };
