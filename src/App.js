@@ -19,6 +19,7 @@ import InvitationForm from "./components/Assement/InvitationForm";
 import { Route, Routes } from "react-router-dom";
 import Timer from "./components/Timer/timer";
 import StudentMainPage from "./Student/StudentMainPage";
+import Studentinvitationform from "./components/Assement/Studentinvitationform";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -55,6 +56,7 @@ function App() {
         <Route exact path="/studentList" element={<StudentList />} />
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
         <Route exact path="/invitation" element={<InvitationForm />} />
+        <Route exact path="/studentinvitationform" element={<Studentinvitationform />} />
       </Routes>
     </div>
   );
