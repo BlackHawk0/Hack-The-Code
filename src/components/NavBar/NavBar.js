@@ -10,10 +10,15 @@ function NavBar() {
         <div class="lg:flex-grow pr-4 text-lg flex space-x-4 justify-end">
           <NavLink
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-black mr-4 items-end"
-            to="/"
+            to="/dashboard"
             exact
-          >
-            Home
+          > 
+        <div className="px-4 py-2">
+        <button
+          className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
+          Home
+        </button>
+      </div>
           </NavLink>
           {/* <NavLink
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-black mr-4 "
