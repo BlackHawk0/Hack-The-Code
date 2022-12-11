@@ -20,7 +20,7 @@ export const SidebarData=[
 
       {
         title: "Assessment",
-        path: "",
+        path: "/assessment",
         icon: <FcIcons.FcDepartment />,
       },
       // {
