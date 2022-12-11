@@ -9,7 +9,7 @@ import MainPage from "./Admin/MainPage";
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
 // import Reviews from "./components/Reviews/reviews";
-
+import MyAssessment from "./components/Assement/MyAssessments";
 import RegisterPage from "./components/Register/Register";
 import StudentList from "./components/StudentList/StudentList";
 import NavBar from "./components/NavBar/NavBar";
@@ -17,7 +17,7 @@ import Home from "./components/Home/Home";
 import CreateAssessment from "./components/Assement/CreateAssement";
 import InvitationForm from "./components/Assement/InvitationForm";
 import { Route, Routes } from "react-router-dom";
-import Timer from "./components/Timer/timer";
+// import Timer from "./components/Timer/timer";
 import StudentMainPage from "./Student/StudentMainPage";
 import Studentinvitationform from "./components/Assement/Studentinvitationform";
 
@@ -45,6 +45,7 @@ function App() {
         <Route exact path="/student" element={<StudentMainPage />} />
         <Route exact path="/studentList" element={<StudentList />} />
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
+        <Route exact path="/assessment" element={<MyAssessment />} />
         <Route exact path="/invitation" element={<InvitationForm />} />
         <Route exact path="/studentinvitationform" element={<Studentinvitationform />} />
       </Routes>
