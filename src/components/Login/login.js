@@ -88,6 +88,11 @@ const LoginPage = () => {
               <Link to="/register">Don't have an account?. Register</Link>
             </button>
           </div>
+          <div className="mt-3">
+            <button className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+              <Link to="/register">Don't have an account?. Register</Link>
+            </button>
+          </div>
         </form>
         <p className="text-center text-gray-500 text-xs absolute bottom-10">
           &copy;2022 Hack The Code. All rights reserved.
