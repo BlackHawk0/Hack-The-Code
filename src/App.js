@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import LoginPage from "./components/Login/login";
 import MainPage from "./Admin/MainPage";
-
 // import RegisterPage from './components/Register/Register';
 // import WhiteBoard from './components/Whiteboard'
 // import WhiteBoard from "./components/Whiteboard";
@@ -25,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* <UserProfile /> */}
       {/* <UserProfile /> */}
 
       {/* <Dashboard /> */}
