@@ -12,18 +12,22 @@ export const ReviewForm = ({handleNewReview}) => {
   const handleSaveReview = async (e) => {
         e.preventDefault();
         console.log(formData);
-            const res = await fetch("http://localhost:3000/reviews", {
+        const data = {
+          message: formData.message,
+          answer_id: formData.answer_id,
+          user_id: formData.user_id,
+
+      }
+            const res = await fetch("https://arcane-lake-46873.herokuapp.com/reviews", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({
-                    message: formData.message,
-                    answer_id: formData.answer_id,
-                    user_id: formData.user_id,
-
-                }),
+                body: JSON.stringify( data
+                  ),
             });
+            console.log(data)
+
             const response = await res.json();
             handleNewReview(response);
             setFormData([{
