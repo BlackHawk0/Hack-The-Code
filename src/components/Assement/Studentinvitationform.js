@@ -1,5 +1,7 @@
 import { useState } from "react";
+import Assessment from "./assessment";
 import RenderInvites from "./RenderInvites";
+
 
 function Studentinvitationform() {
   const [invites, setInvites] = useState("")
@@ -12,6 +14,7 @@ function Studentinvitationform() {
     
   return (
     <div>
+      <Assessment />
       <button 
       onClick={handleClick}
       className="mt-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
