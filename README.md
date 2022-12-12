@@ -1,6 +1,6 @@
-# CheckerRank/ LMS
+# Checker-Rank LMS
  
-### This is a description of the Epitome Beauty Parlour project.
+### This is a description of the CheckerRank LMS.
 
 [Live Demo Link](https://hack-the-code-wm1u.vercel.app/)
 
@@ -14,7 +14,7 @@
 + [Contributors Info](#contributors-info)
 
 ## Description
-<p>This is a single-page website application for a beauty parlour that allows users to view all the services offered, book a service appointment, leave a review and chat directly with the parlour through the Whatsapp chat feature.</p>
+<p>This is a single-page website application for a learning management system that allows users to register and login either as a Technical Mentor or Student, view all the students, assessments, reviews of answers and send invitations to students.</p>
 
 [Live Demo Link](https://hack-the-code-wm1u.vercel.app/)
 
@@ -74,12 +74,12 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 
-[Go Back to the top](#epitome-beauty-parlour)
+[Go Back to the top](#checker-rank-lms)
 ## Technology Used
 
 * Reactjs Libraries - were used in developing the front-end.
 
-* Ruby Sinatra - which was used for developing this project's backend.
+* Ruby on Rails - which was used for developing this project's backend.
 
 * HTML - which was used to build the structure of the pages.
 
@@ -87,7 +87,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 * Javascript - which was used to add interactivity to the website.
 
-* Material UI - which was used for further styling of the website.
+* Bootstrap - which was used for further styling of the website.
 
 * Tailwind CSS - which was used for further styling of the website.
 
@@ -95,8 +95,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 ## Reference
 * Materialize CSS
 
-[Go Back to the top](#epitome-beauty-parlour)
-
+[Go Back to the top](#checker-rank-lms)
 ## Licence
 
 MIT License
@@ -121,7 +120,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[Go Back to the top](#epitome-beauty-parlour)
+[Go Back to the top](##checker-rank-lms)
 
 ## Contributors Info
 
@@ -131,4 +130,4 @@ SOFTWARE.
 ### [Edwin Ngisah](https://github.com/ngisah)
 
 
-## [Go Back to the top](#epitome-beauty-parlour)
+## [Go Back to the top](#checker-rank-lms)
