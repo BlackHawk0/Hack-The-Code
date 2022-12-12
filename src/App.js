@@ -11,7 +11,7 @@ import MainPage from "./Admin/MainPage";
 import MyAssessment from "./components/Assement/MyAssessments";
 import RegisterPage from "./components/Register/Register";
 import StudentList from "./components/StudentList/StudentList";
-import NavBar from "./components/NavBar/NavBar";
+// import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import CreateAssessment from "./components/Assement/CreateAssement";
 import InvitationForm from "./components/Assement/InvitationForm";
@@ -21,7 +21,6 @@ import StudentMainPage from "./Student/StudentMainPage";
 import Studentinvitationform from "./components/Assement/Studentinvitationform";
 
 function App() {
-
   return (
     <div className="App">
       {/* <UserProfile /> */}
@@ -36,7 +35,7 @@ function App() {
       <ReviewForm /> */}
       {/* <Reviews /> */}
 
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<LoginPage />} />
@@ -47,7 +46,11 @@ function App() {
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
         <Route exact path="/assessment" element={<MyAssessment />} />
         <Route exact path="/invitation" element={<InvitationForm />} />
-        <Route exact path="/studentinvitationform" element={<Studentinvitationform />} />
+        <Route
+          exact
+          path="/studentinvitationform"
+          element={<Studentinvitationform />}
+        />
       </Routes>
     </div>
   );

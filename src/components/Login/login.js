@@ -16,7 +16,7 @@ const LoginPage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password }),
     }).then((data) => {
       if (data.ok) {
         data.json().then((user) => {
@@ -27,7 +27,7 @@ const LoginPage = () => {
             window.location.href = "/student";
           }
         });
-      }else {
+      } else {
         toast.error("Incorrect password or username", {
           position: "top-center",
         });
@@ -81,11 +81,6 @@ const LoginPage = () => {
               type="submit"
             >
               Sign In
-            </button>
-          </div>
-          <div className="mt-3">
-            <button className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
-              <Link to="/register">Don't have an account?. Register</Link>
             </button>
           </div>
           <div className="mt-3">

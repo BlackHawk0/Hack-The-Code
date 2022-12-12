@@ -4,7 +4,7 @@ import "./App2.css";
 
 function Dashboard() {
   const [assessmentCount, setAssessmentCount] = useState(0);
-  const [studentsCount, setStudentCount] = useState(0);
+  // const [studentsCount, setStudentCount] = useState(0);
   const [invites, setInvites] = useState(0);
   useEffect(() => {
     fetch("https://arcane-lake-46873.herokuapp.com/allassessments")
@@ -12,10 +12,10 @@ function Dashboard() {
       .then((data) => setAssessmentCount(data))
       .catch((err) => console.log(err));
 
-    fetch("https://arcane-lake-46873.herokuapp.com/allstudents")
-      .then((res) => res.json())
-      .then((data) => setStudentCount(data))
-      .catch((err) => console.log(err));
+  //   fetch("https://arcane-lake-46873.herokuapp.com/allstudents")
+  //     .then((res) => res.json())
+  //     .then((data) => setStudentCount(data))
+  //     .catch((err) => console.log(err));
 
     fetch("https://arcane-lake-46873.herokuapp.com/invites")
       .then((res) => res.json())
@@ -44,11 +44,11 @@ function Dashboard() {
               </a>
             </div>
           </div>
-          <div className="col">
+          {/* <div className="col">
             <div className="card h-100" style={{ backgroundColor: "grey" }}>
               {/* <img src="..." className="card-img-top" alt="..." /> */}
-              <div className="card-body">
-                <h5 className="card-title">{studentsCount}</h5>
+              {/* <div className="card-body"> */}
+                {/* <h5 className="card-title">{studentsCount}</h5>
                 <p className="card-text">Total Number Of Students</p>
               </div>
               <a
@@ -59,18 +59,18 @@ function Dashboard() {
                 More
                 <i className="bi bi-arrow-right-circle-fill" />
               </a>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> } */}
 
           <div className="col">
             <div className="card h-100 " style={{ backgroundColor: "blue" }}>
               {/* <img src="..." className="card-img-top" alt="..." /> */}
               <div className="card-body">
                 <h5 className="card-title">{invites}</h5>
-                <p className="card-text">Invitation</p>
+                <p className="card-text">Invitations</p>
               </div>
               <a
-                href="invitation"
+                href="studentinvitationform"
                 className="small-box-footer"
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -83,7 +83,7 @@ function Dashboard() {
             <div className="card h-100" style={{ backgroundColor: "#A764FC" }}>
               {/* <img src="..." className="card-img-top" alt="..." /> */}
               <div className="card-body">
-                <h5 className="card-title">0</h5>
+                {/* <h5 className="card-title">0</h5> */}
                 <p className="card-text">Reviews</p>
               </div>
               <a

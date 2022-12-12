@@ -1,57 +1,24 @@
 import React, { useState, useEffect } from "react";
-// import { set } from "react-hook-form";
-function StudentList({ onSearching }) {
+import { useNavigate } from "react-router-dom";
+
+function StudentList() {
   const [students, setStudents] = useState([]);
-  // const students = [
-  //   {
-  //     name: "Jane Doe",
-  //     email: "jane@gmail.com",
-  //     score: "10",
-  //     answer: "Ruby gem",
-  //   },
-
-  //   {
-  //     name: "Remy Hassan",
-  //     email: "remy@gmail.com",
-  //     score: "30",
-  //     answer: "Ruby gem",
-  //   },
-  // ];
-
+  const history = useNavigate();
   useEffect(() => {
     fetch("https://arcane-lake-46873.herokuapp.com/students")
       .then((res) => res.json())
       .then((students) => setStudents(students));
   }, []);
 
-  const [search, setSearch] = useState("");
-
-  function handleChange(e) {
-    setSearch(e.target.value);
-    onSearching(search);
-  }
-
   return (
     <div>
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
-          <div class="input-group relative flex flex-wrap items-stretch w-full mb-4 rounded">
-            <input
-              type="search"
-              value={search}
-              onChange={handleChange}
-              class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="button-addon2"
-            ></input>
-            <span
-              class="input-group-text flex items-center px-3 py-1.5 text-base font-normal text-gray-700 text-center whitespace-nowrap rounded"
-              id="basic-addon2"
-            ></span>
-          </div>
-        </div>
-      </div>
+      <br></br>
+      <button
+        onClick={() => history(-1)}
+        className="bg-blue-500 justify-center rounded-lg h-10 w-20 py-2 px-2"
+      >
+        Go Back
+      </button>
       <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
