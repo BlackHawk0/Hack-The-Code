@@ -33,7 +33,7 @@ function StudentList({ onSearching }) {
 
   return (
     <div>
-      <div class="flex justify-center">
+      {/* <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
           <div class="input-group relative flex flex-wrap items-stretch w-full mb-4 rounded">
             <input
@@ -51,7 +51,7 @@ function StudentList({ onSearching }) {
             ></span>
           </div>
         </div>
-      </div>
+      </div> */}
       <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
