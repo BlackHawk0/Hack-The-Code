@@ -7,11 +7,11 @@ import * as MdIcons from "react-icons/md";
 
 
 export const SidebarData=[
-    {
-        title: "Home",
-        path: "/student",
-        icon: <FaIcons.FaHome />,
-      },
+    // {
+    //     title: "Home",
+    //     path: "/student",
+    //     icon: <FaIcons.FaHome />,
+    //   },
       {
         title: "Dashboard",
         path: "/student",

@@ -7,11 +7,11 @@ import * as AiIcons from "react-icons/ai";
 
 
 export const SidebarData = [
-  {
-    title: "Home",
-    path: "/",
-    icon: <FaIcons.FaHome />,
-  },
+  // {
+  //   title: "Home",
+  //   path: "/",
+  //   icon: <FaIcons.FaHome />,
+  // },
   {
     title: "Dashboard",
     path: "/dashboard",
