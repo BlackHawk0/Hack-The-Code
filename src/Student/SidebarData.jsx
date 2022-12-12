@@ -9,18 +9,18 @@ import * as MdIcons from "react-icons/md";
 export const SidebarData=[
     {
         title: "Home",
-        path: "../home",
+        path: "/student",
         icon: <FaIcons.FaHome />,
       },
       {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/student",
         icon: <MdIcons.MdDashboard />,
       },
 
       {
         title: "Assessment",
-        path: "/createassessment",
+        path: "",
         icon: <FcIcons.FcDepartment />,
       },
       // {
@@ -45,7 +45,7 @@ export const SidebarData=[
       // },
       {
         title: "Logout",
-        path: "/logout",
+        path: "/",
         icon: <MdIcons. MdLogout />,
       },
 ]
