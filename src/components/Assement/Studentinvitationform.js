@@ -22,16 +22,18 @@ function Studentinvitationform() {
       >
         Go Back
       </button>
-      <Assessment />
-      <button
-        onClick={handleClick}
-        className="mt-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      >
-        Check Invites
-      </button>
+      <div>
+        <button
+          onClick={handleClick}
+          className="mt-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Check Invites
+        </button>
+      </div>
       <div>
         <RenderInvites invites={invites} />
       </div>
+      <Assessment />
     </div>
   );
 }
