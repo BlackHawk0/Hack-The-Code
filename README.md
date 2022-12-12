@@ -8,13 +8,14 @@ Hack The Code is a software platform similar to hackerrank, which could be used 
 
 This project is a fulfillment of Moringa School's Phase 4 Project Assignment.
 
-## The Link To the Backend Repository
+## Site Live Link
 
 https://arcane-lake-46873.herokuapp.com/
 
 ## API Link
 
 https://hack-the-code-mauve.vercel.app/
+
 ## Features 
 
 The project contains multiple user authentication for both teachers and students. The features for teachers include:
