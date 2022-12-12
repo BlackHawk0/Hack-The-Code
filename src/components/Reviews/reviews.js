@@ -7,7 +7,7 @@ export default function Reviews() {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-            fetch('https://my-json-server.typicode.com/StephenKairu/dummydbserver/Reviews')
+            fetch('http://localhost:3000/reviews')
               .then((response) => response.json())
               .then(reviews => setReviews(reviews))
             //   .then((comments) => comments.forEach(review => renderOneReview(review)));

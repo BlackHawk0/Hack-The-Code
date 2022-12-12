@@ -7,7 +7,7 @@ import MainPage from "./Admin/MainPage";
 // import WhiteBoard from "./components/Whiteboard";
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
-// import Reviews from "./components/Reviews/reviews";
+import Reviews from "./components/Reviews/reviews";
 import MyAssessment from "./components/Assement/MyAssessments";
 import RegisterPage from "./components/Register/Register";
 import StudentList from "./components/StudentList/StudentList";
@@ -44,6 +44,7 @@ function App() {
         <Route exact path="/dashboard" element={<MainPage />} />
         <Route exact path="/student" element={<StudentMainPage />} />
         <Route exact path="/studentList" element={<StudentList />} />
+        <Route exact path="/reviews" element={<Reviews />} />
         <Route exact path="/createAssessment" element={<CreateAssessment />} />
         <Route exact path="/assessment" element={<MyAssessment />} />
         <Route exact path="/invitation" element={<InvitationForm />} />

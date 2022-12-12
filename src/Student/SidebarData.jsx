@@ -35,7 +35,7 @@ export const SidebarData=[
       },
       {
         title: "Reviews",
-        path: "/studentReviews",
+        path: "/reviews",
         icon: <MdIcons.MdOutlineReviews />,
       },
       // {

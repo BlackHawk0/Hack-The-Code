@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Assessment from "./assessment";
+import Article from "./article";
 import RenderInvites from "./RenderInvites";
+import Test from "./test";
 
 
 function Studentinvitationform() {
   const [invites, setInvites] = useState("")
+
+  // const [title, setTitle] = useState("");
+  // const [timeLimit, setTimeLimit] = useState(0);
+  // const [questions, setQuestions] = useState([
+  //   { type: "multiple_choice", question: "", choices: [""] },
+  // ]);
+    // const [questions, setQuestions] = useState([]);
+  const [error, setError] = useState("");
+  const [assessments, setAssessments] = useState([]);
+
+  useEffect(() => {
+    fetch('https://arcane-lake-46873.herokuapp.com/assessments/')
+      .then((response) => response.json())
+      .then(assessments => setAssessments(assessments))
+  }, [])
 
   const handleClick = () => {
     fetch("https://arcane-lake-46873.herokuapp.com/invitations")
@@ -14,6 +31,8 @@ function Studentinvitationform() {
     
   return (
     <div>
+      {/* <Article /> */}
+      {/* <Test /> */}
       <Assessment />
       <button 
       onClick={handleClick}
