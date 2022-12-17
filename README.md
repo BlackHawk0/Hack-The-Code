@@ -9,12 +9,12 @@ Hack The Code is a software platform similar to hackerrank, which could be used 
 This project is a fulfillment of Moringa School's Phase 4 Project Assignment.
 
 ## Site Live Link
+https://hack-the-code-mauve.vercel.app/
 
-https://arcane-lake-46873.herokuapp.com/
 
 ## API Link
+https://arcane-lake-46873.herokuapp.com/
 
-https://hack-the-code-mauve.vercel.app/
 
 ## Features 
 
