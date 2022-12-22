@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-function Timer({}) {
-  const [count, setCount] = useState(60);
+function Timer({timeLimit}) {
+  const [count, setCount] = useState(timeLimit);
+  console.log(timeLimit)
   useEffect(() => {
     const interval = setInterval(() => {
       setCount(count - 1);

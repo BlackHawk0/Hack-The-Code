@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from 'react'
 import { AiOutlineConsoleSql } from 'react-icons/ai';
 import Timer from '../Timer/timer';
+import AssessCard from './AssessCard';
 
 const Assessment = () => {
-
 
   const [title, setTitle] = useState("");
   const [timeLimit, setTimeLimit] = useState(0);
@@ -13,9 +13,10 @@ const Assessment = () => {
     // const [questions, setQuestions] = useState([]);
   const [error, setError] = useState("");
   const [assessments, setAssessments] = useState([]);
+  
 
   useEffect(() => {
-    fetch('https://arcane-lake-46873.herokuapp.com/assessments')
+    fetch('http://localhost:3000/assessments/1')
       .then((response) => response.json())
       .then(assessments => setAssessments(assessments))
   }, [])
@@ -95,20 +96,31 @@ const Assessment = () => {
 
 
   return (
-    <div className="w-full max-w-4xl mt-16 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+    <div key={assessments.id} className="w-full max-w-4xl mt-16 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
       <h2 className="font-bold text-3xl text-center py-6 text-gray-700 bg-gray-200">
         Take Assessment
         <Timer />
       </h2>
-      {assessments.map( (t) => (
+      
       <div className="mx-auto max-w-2xl p-4 px-4 py-2 flex-1">
       <div className="mt-4">
           <label className="text-left block font-bold mb-2 text-gray-700">
-            Title: {t.title} <br />
-            Time: {t.timeLimit} <br />
-            {/* <h2>{t.questions.map((q) => (
+
+            Title: {assessments.title} <br />
+            Time: {assessments.timeLimit} <br />
+            <AssessCard key={assessments.id} assessments={assessments}/>
+            {/* Time: {assessments.questions.map((f)=> (
+              <div>
+              <h2>{f.type}</h2>
+              <h2>{id}</h2>
+              <h2>{choices}</h2>
+              <h2>{question}</h2>
+              </div>
+            ))} <br /> */}
+            {/* {assessments.questions.map((q) => (
               <h3>{q.question}</h3>
-            ))}</h2> */}
+            ))} */}
+
           </label>
 
         </div>
@@ -159,7 +171,6 @@ const Assessment = () => {
           </label>
         </div> */}
       </div>
-      ))}
       <div className="px-4 py-2 mb-12">
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

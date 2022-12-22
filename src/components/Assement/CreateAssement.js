@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
 const CreateAssessment = () => {
   const [title, setTitle] = useState("");
   const [timeLimit, setTimeLimit] = useState(0);
@@ -84,7 +85,7 @@ const CreateAssessment = () => {
       timeLimit,
       questions,
     };
-    fetch("https://arcane-lake-46873.herokuapp.com/assessments", {
+    fetch("http://localhost:3000/assessments", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -110,6 +111,7 @@ const CreateAssessment = () => {
 
   return (
     <div className="w-full max-w-4xl mt-16 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+      
       <h2 className="font-bold text-3xl text-center py-6 text-gray-700 bg-gray-200">
         Create Assessment
       </h2>

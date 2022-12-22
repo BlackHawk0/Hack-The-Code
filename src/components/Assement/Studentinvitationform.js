@@ -18,7 +18,7 @@ function Studentinvitationform() {
   const [assessments, setAssessments] = useState([]);
 
   useEffect(() => {
-    fetch('https://arcane-lake-46873.herokuapp.com/assessments/')
+    fetch('https://arcane-lake-46873.herokuapp.com/assessments')
       .then((response) => response.json())
       .then(assessments => setAssessments(assessments))
   }, [])
