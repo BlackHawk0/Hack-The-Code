@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { Link } from "react-router-dom";
 import Posts from '../posts';
-import Article from './article';
 import { ReviewCard } from '../Reviews/ReviewCard';
 
 const MyAssessment = () => {
@@ -18,16 +17,10 @@ const MyAssessment = () => {
 
 const handleClick = () => {
   fetch("http://localhost:3000/assessments/1")
-  // fetch("http://localhost:3000/reviews/1")
   .then((res) => res.json())
   .then((reviews) => setReviews(reviews));
 }
 
-// const handleClick = () => {
-//   fetch("http://localhost:3000/reviews/1")
-//   .then((res) => res.json())
-//   .then((reviews) => setReviews(reviews));
-// }
 
   return (
     <div>
@@ -40,33 +33,25 @@ const handleClick = () => {
       </div>
         {assessments.map((assessment, index) => (
             <div key={assessment.id} className="w-full max-w-4xl mt-16 mx-auto bg-blue rounded-lg shadow-lg overflow-hidden flex flex-col">
-                <Link to={`/article/${assessment.id}`}>
-                  <div className="mt-4 ont-bold text-2xl text-center py-6 text-white bg-blue-400">
+                  <div className="mt-4 font-bold text-2xl text-center py-6 text-white bg-blue-400">
                  {index+ 1} <br />
                  Title: {assessment.title} <br />
-                  {/* <Article key={assessment.id} assessment={assessment}/> */}
                 </div>
-                </Link>
-                {assessment.title}            
+                
                 <div className="px-4 py-2">
+                <Link to={`/assessment/${assessment.id}`}>
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={handleClick}
+                // onClick={handleClick}
               >
                 Take Test
               </button>
+              </Link>
               {/* {reviews.map((review) => (
 					<ReviewCard key={review.id} review={review} />))} */}
 					      {/* <ReviewCard reviews={reviews} /> */}
          
       </div>
-      {
-        reviews && <div><ReviewCard key={reviews.id} reviews={reviews} /></div>
-      }
-
-      {/* {
-        reviews && <div><Article key={reviews.id} reviews={reviews} /></div>
-      } */}
     </div>    
           ))}       
     </div>

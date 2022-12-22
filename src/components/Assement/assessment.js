@@ -1,26 +1,30 @@
 import React,{useState, useEffect} from 'react'
 import { AiOutlineConsoleSql } from 'react-icons/ai';
 import Timer from '../Timer/timer';
-import AssessCard from './AssessCard';
+import { useParams } from "react-router-dom";
 
 const Assessment = () => {
 
-  const [title, setTitle] = useState("");
-  const [timeLimit, setTimeLimit] = useState(0);
+  // const [title, setTitle] = useState("");
+  // const [timeLimit, setTimeLimit] = useState(0);
+  
   // const [questions, setQuestions] = useState([
   //   { type: "multiple_choice", question: "", choices: [""] },
   // ]);
     // const [questions, setQuestions] = useState([]);
   const [error, setError] = useState("");
-  const [assessments, setAssessments] = useState([]);
-  
 
-  useEffect(() => {
-    fetch('http://localhost:3000/assessments/1')
-      .then((response) => response.json())
-      .then(assessments => setAssessments(assessments))
-  }, [])
+  const [assessments, setAssessments] = useState();
+  const { id } = useParams();
 
+    useEffect(() => {
+        fetch(`http://localhost:3000/assessments/${id}`)    
+        .then((response) => response.json())
+        .then(assessments => setAssessments(assessments))
+          
+        }, [id]);
+
+        const {title, questions, timeLimit} = assessments || {}
   // const test =(assess)=>{
   //   assess.map( t => console.log(t.title))
     
@@ -31,27 +35,15 @@ const Assessment = () => {
   // console.log(test(assessments))
 
 
-
-// useEffect(() => {
-//   fetch('http://localhost:3000/assessments/1/questions')
-//     .then((response) => response.json())
-//     .then(questions => setQuestions(questions))
-// }, [])
-
-  // const handleTimeLimitChange = (event) => {
-  //   setTimeLimit(event.target.value);
-  // };
-
-
   const handleSubmit = () => {
-    const data = {
-      title,
-      timeLimit,
-      // questions,
-    };
+    // const data = {
+    //   title,
+    //   timeLimit,
+    //   questions,
+    // };
     fetch("https://arcane-lake-46873.herokuapp.com/assessments", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(),
       headers: {
         "Content-Type": "application/json",
       },
@@ -63,8 +55,8 @@ const Assessment = () => {
         return response.json();
       })
       .then((data) => {
-        setTitle("");
-        setTimeLimit(0);
+        // setTitle("");
+        // setTimeLimit(0);
         // setQuestions([]);
         setError("");
       })
@@ -96,52 +88,27 @@ const Assessment = () => {
 
 
   return (
-    <div key={assessments.id} className="w-full max-w-4xl mt-16 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-      <h2 className="font-bold text-3xl text-center py-6 text-gray-700 bg-gray-200">
+    <div key={id} className="w-full max-w-4xl mt-2 mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+      <h2 className="font-bold text-4xl text-center py-6 text-gray-700 bg-gray-200">
         Take Assessment
         <Timer />
       </h2>
       
       <div className="mx-auto max-w-2xl p-4 px-4 py-2 flex-1">
-      <div className="mt-4">
-          <label className="text-left block font-bold mb-2 text-gray-700">
-
-            Title: {assessments.title} <br />
-            Time: {assessments.timeLimit} <br />
-            <AssessCard key={assessments.id} assessments={assessments}/>
-            {/* Time: {assessments.questions.map((f)=> (
-              <div>
-              <h2>{f.type}</h2>
-              <h2>{id}</h2>
-              <h2>{choices}</h2>
-              <h2>{question}</h2>
-              </div>
-            ))} <br /> */}
-            {/* {assessments.questions.map((q) => (
-              <h3>{q.question}</h3>
-            ))} */}
-
-          </label>
-
-        </div>
-        
-        
-        {/* <div className="mb-4 w-full bg-blue-500">
-          <label className="font-bold"> Questions:</label>
-          <label className=" text-left mt-3 block font-bold text mb-2 text-gray-700">
-            <div className=" w-full max-w-4xl mt-16 mx-auto bg-yellow-500 rounded-lg shadow-lg overflow-hidden flex flex-col">
-            {t.questions.map((arr, index) => (
-                  <div key={index} className="w-full max-w-4xl mt-16 mx-auto bg-blue rounded-lg shadow-lg overflow-hidden flex flex-col">
-                    <label className="block font-bold mb-2 text-gray-700">
-                      Question {index + 1}:{arr.question}
+   
+        <div className="mb-4 w-full mt-7">
+        <h2 className='text-3xl font-bold'>Assessment: {title}</h2>
+          <div className="font-bold mt-4 mb-3 text-2xl text-blue-300"> Questions:</div>
+          {/* <label className=" text-left mt-3 block font-bold text mb-2 text-gray-700"> */}
+            {/* <div className=" w-full max-w-4xl mt-2 mx-auto bg-yellow-500 rounded-lg shadow-lg overflow-hidden flex flex-col"> */}
+            {questions && questions.map((arr, index) => (
+                  <div key={index} className="w-full max-w-4xl mt-2 mb-4 mx-auto bg-blue rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <label className="block text-lg font-bold mb-2 mt-3 text-gray-700">
+                      Qn {index + 1}: {arr.question}
                     </label>
-                    <label className="mt-3 text-center justify-center ml-48">
-                      Choices
-                    </label>
-
                     <label
         htmlFor="students"
-        className="mt-2 mb-2 focus:oappearance-none border w-72 bg-blue-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="mt-2 mb-2 focus:oappearance-none border w-96 bg-blue-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       >
         <h1 className="mt-2 px-3 text-sm font-bold text-gray-800">
           Select Answer
@@ -160,16 +127,11 @@ const Assessment = () => {
             ))}
         </select>
       </label>
-
-                    <div className="mt-5 w-full">
-                    
-                     
-                    </div>
                   </div>
                 ))}
-            </div>
-          </label>
-        </div> */}
+            {/* </div> */}
+          {/* </label> */}
+        </div>
       </div>
       <div className="px-4 py-2 mb-12">
         <button

@@ -21,9 +21,9 @@ export default function Reviews() {
     return (
         <div className="reviews items-center">
             <br /><br />
-            {/* {reviews.map((review) => (
-					<ReviewCard key={review.id} review={review} />))} */}
-                    <ReviewCard key={reviews.id} reviews={reviews} />
+            {reviews.map((review) => (
+					<ReviewCard key={review.id} review={review} />))}
+                    {/* <ReviewCard key={reviews.id} reviews={reviews} /> */}
             <ReviewForm handleNewReview={handleNewReview} reviews={reviews}/>
         </div>
     );

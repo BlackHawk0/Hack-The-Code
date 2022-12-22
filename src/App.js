@@ -7,7 +7,6 @@ import MainPage from "./Admin/MainPage";
 // import WhiteBoard from "./components/Whiteboard";
 // import { ReviewCard } from './components/Reviews/ReviewCard';
 // import { ReviewForm } from './components/Reviews/ReviewForm';
-import Article from "./components/Assement/article";
 import Reviews from "./components/Reviews/reviews";
 import MyAssessment from "./components/Assement/MyAssessments";
 import RegisterPage from "./components/Register/Register";
@@ -20,6 +19,7 @@ import { Route, Routes } from "react-router-dom";
 // import Timer from "./components/Timer/timer";
 import StudentMainPage from "./Student/StudentMainPage";
 import Studentinvitationform from "./components/Assement/Studentinvitationform";
+import Assessment from "./components/Assement/assessment";
 
 function App() {
 
@@ -50,7 +50,7 @@ function App() {
         <Route exact path="/assessment" element={<MyAssessment />} />
         <Route exact path="/invitation" element={<InvitationForm />} />
         <Route exact path="/studentinvitationform" element={<Studentinvitationform />} />
-        <Route exact path="/article/:id" element={<Article />} />
+        <Route exact path="/assessment/:id" element={<Assessment />} />
         {/* <Route exact path="/invitation" element={<Revi />} /> */}
       </Routes>
     </div>
